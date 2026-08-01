@@ -217,9 +217,6 @@ export default function HomeHtml() {
           <div className="bento-card cta-bento-card" style={{ padding: 'clamp(32px, 5vw, 64px) clamp(20px, 4vw, 48px)' }}>
             <div className="cta-grid">
               <div className="cta-content">
-                <div className="label-pill" style={{ marginBottom: 'var(--space-sm)', backgroundColor: 'var(--accent)', color: 'var(--accent-contrast)' }}>
-                  LET'S CONNECT
-                </div>
                 <h2 className="font-display" style={{ marginBottom: 'var(--space-xs)', fontSize: 'clamp(1.5rem, 3.2vw, 2.5rem)', whiteSpace: 'nowrap' }}>
                   Have a project in mind?
                 </h2>

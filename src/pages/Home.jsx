@@ -241,9 +241,6 @@ export default function Home() {
         <div className="bento-card cta-bento-card" style={{ padding: 'var(--space-xl) var(--space-lg)' }}>
           <div className="cta-grid">
             <div className="cta-content">
-              <div className="label-pill" style={{ marginBottom: 'var(--space-sm)', backgroundColor: 'var(--accent)', color: 'var(--accent-contrast)' }}>
-                LET'S CONNECT
-              </div>
               <h2 className="font-display" style={{ marginBottom: 'var(--space-xs)', fontSize: 'clamp(1.5rem, 3.2vw, 2.5rem)', whiteSpace: 'nowrap' }}>
                 Have a project in mind?
               </h2>

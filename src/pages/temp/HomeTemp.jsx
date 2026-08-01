@@ -239,9 +239,6 @@ export default function HomeTemp() {
           <div className="bento-card cta-bento-card" style={{ padding: 'clamp(32px, 5vw, 64px) clamp(20px, 4vw, 48px)' }}>
             <div className="cta-grid">
               <div className="cta-content">
-                <div className="label-pill" style={{ marginBottom: 'var(--space-sm)', backgroundColor: 'var(--accent)', color: 'var(--accent-contrast)' }}>
-                  LET'S CONNECT
-                </div>
                 <h2 className="font-display" style={{ marginBottom: 'var(--space-xs)', fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)' }}>
                   Have a project in mind?
                 </h2>
