@@ -1750,18 +1750,30 @@ li {
     justify-content: center;
     padding: var(--space-lg) 0;
     box-sizing: border-box;
+    width: 100%;
+}
+
+.stacked-deck-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .deck-grid-container {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.8fr 1.2fr;
     gap: var(--space-xl);
     width: 100%;
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-md);
-    height: 80vh;
+    min-height: 80vh;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
 }
 
@@ -1789,8 +1801,11 @@ li {
 
 .stacked-deck-wrapper {
     position: relative;
-    width: 720px;
-    height: 610px;
+    width: 100%;
+    max-width: 760px !important;
+    height: 570px !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 auto;
     perspective: 1000px;
 }
 
@@ -1801,8 +1816,14 @@ li {
     width: 100% !important;
     height: 100% !important;
     margin: 0;
+    padding: 0 !important;
     backface-visibility: hidden;
     will-change: transform, opacity;
+    border: 1px solid var(--brand-border, rgba(0,0,0,0.08)) !important;
+    border-radius: var(--radius-lg, 24px) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
+    background-color: var(--brand-card-bg, #ffffff) !important;
+    overflow: hidden !important;
 }
 
 /* ==========================================================================
@@ -2279,7 +2300,7 @@ li {
     box-shadow: 0 0 5px #00e676;
 }
 
-@media (max-width: 1248px) {
+@media (max-width: 992px) {
     .deck-grid-container {
         grid-template-columns: 1fr;
         height: auto;
@@ -2436,6 +2457,65 @@ body.theme-brand .scroll-indicator-arrow:hover {
     justify-content: center !important;
     gap: var(--space-sm) !important;
     padding-left: 0 !important;
+}
+
+/* F1 Deck Card Layout & Sizing */
+.f1-deck-card-content {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    width: 100% !important;
+    padding: 28px 32px 36px 32px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.f1-deck-card-image-wrap {
+    width: 100% !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    flex: 0 0 260px !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    border: 1px solid var(--brand-border, rgba(0,0,0,0.08)) !important;
+    background-color: #0b0b0f !important;
+    margin-bottom: 14px !important;
+}
+
+.f1-deck-card-image-wrap iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+}
+
+.f1-deck-card-text {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+.f1-deck-card-text h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+    margin: 0 0 4px 0 !important;
+    font-weight: 700 !important;
+    color: var(--brand-text, #1e293b) !important;
+}
+
+.f1-deck-card-text p {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+    color: var(--text-sub, #555555) !important;
+    margin: 0 !important;
 }
 
 /* Moodboard specific classes */
@@ -2638,8 +2718,8 @@ body.theme-brand .scroll-indicator-arrow:hover {
 @media (max-width: 1248px) {
     .stacked-deck-wrapper {
         width: 100%;
-        max-width: 680px;
-        height: 580px;
+        max-width: 1060px;
+        height: 720px;
         margin: 0 auto;
     }
 }
@@ -2709,14 +2789,21 @@ body.theme-brand .scroll-indicator-arrow:hover {
 }
 
 @media (max-width: 768px) {
-    .emberquit-deck-card-content {
+    .emberquit-deck-card-content,
+    .f1-deck-card-content {
         grid-template-columns: 1fr !important;
         grid-template-rows: auto auto !important;
         gap: var(--space-md) !important;
         padding: var(--space-md) !important;
     }
     
-    .emberquit-deck-card-text h3 {
+    .f1-deck-card-image-wrap {
+        height: 240px !important;
+        min-height: 240px !important;
+    }
+    
+    .emberquit-deck-card-text h3,
+    .f1-deck-card-text h3 {
         font-size: 1.3rem !important;
         margin-top: 0 !important;
     }
@@ -2831,19 +2918,13 @@ body.theme-brand .scroll-indicator-arrow:hover {
     }
 }
 
-
-
-
-
-
-
-    }
     .stacked-deck-wrapper {
         width: 100% !important;
-        max-width: 580px !important;
-        height: 520px !important;
+        max-width: 760px !important;
+        height: 570px !important;
+        aspect-ratio: 4 / 3 !important;
+        margin: 0 auto !important;
     }
-}
 
 
 /* ==========================================================================
@@ -2955,6 +3036,7 @@ body.theme-brand .scroll-indicator-arrow:hover {
         height: 133.333%;
         transform: scale(0.75);
 max-width: none;
+    }
 }
 
 /* Concept Section Split Layout */
@@ -3026,19 +3108,11 @@ max-width: none;
     }
 }
 
-
-
-
-
-
-
-    }
     .stacked-deck-wrapper {
         width: 100% !important;
         max-width: 580px !important;
         height: 520px !important;
     }
-}
 
 
 /* ==========================================================================
@@ -3171,4 +3245,13 @@ body.temp-page .slide-image-wrapper.wide-wrapper {
     height: 380px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+}
+/* FULL WIDTH RESUME STYLE FOOTER OVERRIDE */
+footer, .project-footer-island {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: #ffffff !important;
+    border-top: 1px solid rgba(10, 17, 40, 0.08) !important;
 }
