@@ -28,7 +28,7 @@ export default function HomeHtml() {
             <div className="bento-card col-12" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'left', padding: 'clamp(32px, 6vw, 80px) clamp(24px, 5vw, 100px)', minHeight: '420px' }}>
               <h1 className="custom-entrance-h1" style={{ marginBottom: 'var(--space-sm)', position: 'relative', fontSize: 'clamp(2.2rem, 4.8vw, 3.8rem)' }}>
                 <span id="hero-greeting" className="gsap-split-portfolio" style={{ color: 'var(--accent-text)', display: 'inline-block', transition: 'all 0.3s ease' }}>{GREETINGS[greetingIndex]}</span><br />
-                <span style={{ whiteSpace: 'nowrap' }}><span className="hero-title-main gsap-split-portfolio">I</span> <span className="hero-title-main gsap-split-portfolio">AM</span> <span className="hero-title-main gsap-split-portfolio">SHREYA</span> <span className="hero-title-main gsap-split-portfolio">KULKARNI</span></span>
+                <span className="nowrap-desktop"><span className="hero-title-main gsap-split-portfolio">I</span> <span className="hero-title-main gsap-split-portfolio">AM</span> <span className="hero-title-main gsap-split-portfolio">SHREYA</span> <span className="hero-title-main gsap-split-portfolio">KULKARNI</span></span>
               </h1>
               <p className="text-lead" style={{ maxWidth: '620px', marginBottom: 'var(--space-md)' }}>
                 A Product Designer who applies product thinking to promote unconventional design solutions by pushing the boundaries of problem solving and articulating <span style={{ whiteSpace: 'nowrap' }}>compelling narratives.</span>

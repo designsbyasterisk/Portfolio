@@ -120,7 +120,7 @@ export default function Home() {
                 {GREETINGS[greetingIndex]}
               </span>
               <br />
-              <span style={{ whiteSpace: 'nowrap' }}>I AM SHREYA KULKARNI</span>
+              <span className="nowrap-desktop">I AM SHREYA KULKARNI</span>
             </h1>
             <p className="text-lead hero-text" style={{ maxWidth: '620px', marginBottom: 'var(--space-md)' }}>
               A Product Designer who applies product thinking to promote unconventional design solutions by pushing the boundaries of problem solving and articulating compelling narratives.

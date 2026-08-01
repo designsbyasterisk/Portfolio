@@ -251,16 +251,94 @@ export function initProjectDetailAnimations(gsap, ScrollTrigger) {
             );
         }
 
+        // Initialize matchMedia for responsive animations
+        let mm = gsap.matchMedia();
+
         // 2. Chapter Deck Pin (Vertical Stacked Card Deck Reveal)
-        const deckSection = document.querySelector('.chapter-deck-pin');
-        if (deckSection) {
-            const deckCards = deckSection.querySelectorAll('.deck-card');
-            if (deckCards.length > 0) {
-                const deckTl = gsap.timeline({
+        // Only run stacked deck animation on desktop / wide landscape viewports
+        mm.add("(min-width: 1025px)", () => {
+            const deckSection = document.querySelector('.chapter-deck-pin');
+            if (deckSection) {
+                const deckCards = deckSection.querySelectorAll('.deck-card');
+                if (deckCards.length > 0) {
+                    const deckTl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: deckSection,
+                            start: "top top",
+                            end: () => `+=${deckCards.length * 100}%`,
+                            pin: true,
+                            scrub: true,
+                            invalidateOnRefresh: true,
+                            anticipatePin: 1
+                        }
+                    });
+
+                    // Set initial overlapping layers
+                    deckCards.forEach((card, idx) => {
+                        gsap.set(card, {
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            y: 0,
+                            opacity: 1,
+                            scale: idx === 0 ? 1 : (idx === 1 ? 0.95 : 0.9),
+                            zIndex: 50 - idx
+                        });
+                    });
+
+                    // Animate cards sequentially on scroll progress
+                    deckCards.forEach((card, idx) => {
+                        if (idx < deckCards.length - 1) {
+                            const slideDir = idx % 2 === 0 ? "-120%" : "120%";
+                            const rotDir = idx % 2 === 0 ? -8 : 8;
+                            deckTl.to(card, {
+                                x: slideDir,
+                                rotation: rotDir,
+                                duration: 1,
+                                ease: "power2.inOut"
+                            });
+                            deckTl.to(deckCards[idx + 1], {
+                                scale: 1,
+                                duration: 1,
+                                ease: "power2.inOut"
+                            }, "-=1");
+
+                            if (deckCards[idx + 2]) {
+                                deckTl.to(deckCards[idx + 2], {
+                                    scale: 0.95,
+                                    duration: 1,
+                                    ease: "power2.inOut"
+                                }, "-=1");
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+        // 3. Horizontal Gallery Showcase
+        // Only run horizontal gallery scroll pin on desktop/tablet landscape (> 992px width and aspect ratio > 1.1/1)
+        mm.add("(min-width: 993px) and (min-aspect-ratio: 1.11/1)", () => {
+            const gallerySections = document.querySelectorAll('.chapter-gallery-pin');
+            gallerySections.forEach((gallerySection) => {
+                const galleryTrack = gallerySection.querySelector('.gallery-horizontal-track');
+                if (!galleryTrack) return;
+
+                const getScrollAmount = () => {
+                    let trackWidth = galleryTrack.scrollWidth;
+                    let viewportWidth = window.innerWidth;
+                    return -(trackWidth - viewportWidth);
+                };
+
+                const horizontalTween = gsap.to(galleryTrack, {
+                    x: () => getScrollAmount(),
+                    ease: "none",
                     scrollTrigger: {
-                        trigger: deckSection,
+                        trigger: gallerySection,
                         start: "top top",
-                        end: () => `+=${deckCards.length * 100}%`,
+                        end: () => `+=${galleryTrack.scrollWidth - window.innerWidth + 400}`,
                         pin: true,
                         scrub: true,
                         invalidateOnRefresh: true,
@@ -268,116 +346,47 @@ export function initProjectDetailAnimations(gsap, ScrollTrigger) {
                     }
                 });
 
-                // Set initial overlapping layers
-                deckCards.forEach((card, idx) => {
-                    gsap.set(card, {
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        y: 0,
-                        opacity: 1,
-                        scale: idx === 0 ? 1 : (idx === 1 ? 0.95 : 0.9),
-                        zIndex: 50 - idx
-                    });
-                });
-
-                // Animate cards sequentially on scroll progress
-                deckCards.forEach((card, idx) => {
-                    if (idx < deckCards.length - 1) {
-                        const slideDir = idx % 2 === 0 ? "-120%" : "120%";
-                        const rotDir = idx % 2 === 0 ? -8 : 8;
-                        deckTl.to(card, {
-                            x: slideDir,
-                            rotation: rotDir,
-                            duration: 1,
-                            ease: "power2.inOut"
-                        });
-                        deckTl.to(deckCards[idx + 1], {
-                            scale: 1,
-                            duration: 1,
-                            ease: "power2.inOut"
-                        }, "-=1");
-
-                        if (deckCards[idx + 2]) {
-                            deckTl.to(deckCards[idx + 2], {
-                                scale: 0.95,
-                                duration: 1,
-                                ease: "power2.inOut"
-                            }, "-=1");
-                        }
-                    }
-                });
-            }
-        }
-
-        // 3. Horizontal Gallery Showcase
-        const gallerySections = document.querySelectorAll('.chapter-gallery-pin');
-        gallerySections.forEach((gallerySection) => {
-            const galleryTrack = gallerySection.querySelector('.gallery-horizontal-track');
-            if (!galleryTrack) return;
-
-            const getScrollAmount = () => {
-                let trackWidth = galleryTrack.scrollWidth;
-                let viewportWidth = window.innerWidth;
-                return -(trackWidth - viewportWidth);
-            };
-
-            const horizontalTween = gsap.to(galleryTrack, {
-                x: () => getScrollAmount(),
-                ease: "none",
-                scrollTrigger: {
-                    trigger: gallerySection,
-                    start: "top top",
-                    end: () => `+=${galleryTrack.scrollWidth - window.innerWidth + 400}`,
-                    pin: true,
-                    scrub: true,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1
-                }
-            });
-
-            const slideCards = galleryTrack.querySelectorAll('.gallery-slide-card');
-            slideCards.forEach((card) => {
-                const img = card.querySelector('.slide-image-wrapper img');
-                const wrapper = card.querySelector('.slide-image-wrapper');
-                if (img && wrapper) {
-                    const isMockup = img.src.includes('mockup') || wrapper.classList.contains('wide-wrapper');
-                    const startScale = isMockup ? 1.03 : 1.12;
-                    gsap.fromTo(img,
-                        { scale: startScale },
-                        {
-                            scale: 1.0,
-                            ease: "power1.out",
-                            scrollTrigger: {
-                                trigger: card,
-                                containerAnimation: horizontalTween,
-                                start: "left 90%",
-                                end: "left 40%",
-                                scrub: true
+                const slideCards = galleryTrack.querySelectorAll('.gallery-slide-card');
+                slideCards.forEach((card) => {
+                    const img = card.querySelector('.slide-image-wrapper img');
+                    const wrapper = card.querySelector('.slide-image-wrapper');
+                    if (img && wrapper) {
+                        const isMockup = img.src.includes('mockup') || wrapper.classList.contains('wide-wrapper');
+                        const startScale = isMockup ? 1.03 : 1.12;
+                        gsap.fromTo(img,
+                            { scale: startScale },
+                            {
+                                scale: 1.0,
+                                ease: "power1.out",
+                                scrollTrigger: {
+                                    trigger: card,
+                                    containerAnimation: horizontalTween,
+                                    start: "left 90%",
+                                    end: "left 40%",
+                                    scrub: true
+                                }
                             }
-                        }
-                    );
-                }
-
-                const cardTl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: card,
-                        containerAnimation: horizontalTween,
-                        start: "left 98%",
-                        end: "right 2%",
-                        scrub: true,
-                        invalidateOnRefresh: true
+                        );
                     }
-                });
 
-                cardTl.fromTo(card,
-                    { scale: 0.88, opacity: 0.45, rotation: 1.5, transformOrigin: "center center" },
-                    { scale: 1.0, opacity: 1, rotation: 0, ease: "power1.out", duration: 0.5 }
-                ).to(card,
-                    { scale: 0.88, opacity: 0.45, rotation: -1.5, ease: "power1.in", duration: 0.5 }
-                );
+                    const cardTl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: card,
+                            containerAnimation: horizontalTween,
+                            start: "left 98%",
+                            end: "right 2%",
+                            scrub: true,
+                            invalidateOnRefresh: true
+                        }
+                    });
+
+                    cardTl.fromTo(card,
+                        { scale: 0.88, opacity: 0.45, rotation: 1.5, transformOrigin: "center center" },
+                        { scale: 1.0, opacity: 1, rotation: 0, ease: "power1.out", duration: 0.5 }
+                    ).to(card,
+                        { scale: 0.88, opacity: 0.45, rotation: -1.5, ease: "power1.in", duration: 0.5 }
+                    );
+                });
             });
         });
 

@@ -1899,6 +1899,9 @@ header.floating-header .container {
     }
 }
 
+.nowrap-desktop {
+    white-space: nowrap;
+}
 
 /* Responsive Container Outer Margins (Responsive_Grid_System_Guide.md) */
 @media (min-width: 1440px) {
