@@ -3143,21 +3143,6 @@ header.floating-header {
     transform: scale(0.7);
     transform-origin: top left;
   }
-
-  .ds-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 24px !important;
-  }
-
-  .ds-column {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .ds-column:last-child {
-    grid-column: span 2 !important;
-  }
 }
 
 /* Mobile Devices (<= 767px) */
@@ -4788,6 +4773,22 @@ footer, .project-footer-island {
     .layered-card p {
         font-size: 0.72rem !important;
         line-height: 1.4 !important;
+    }
+}
+
+/* iPad Portrait (768px - 1024px portrait) Design System Grid */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .ds-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 24px !important;
+    }
+    .ds-column {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .ds-column:last-child {
+        grid-column: span 2 !important;
     }
 }
 
