@@ -238,7 +238,7 @@ export default function F1DashboardHtml() {
               </p>
             </div>
             
-            <div className="concept-layout-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '48px', width: '100%', marginBottom: 'var(--space-md)' }}>
+            <div className="concept-layout-split">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', justifyContent: 'center' }}>
                 {/* Card 1: Modular Grid Environment */}
                 <div className="bento-card" style={{ margin: '0', backgroundColor: 'var(--brand-card-bg)', borderColor: 'var(--brand-border)', borderTop: '3px solid var(--brand-accent)', padding: '22px 24px', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0, 0, 0, 0.03)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>

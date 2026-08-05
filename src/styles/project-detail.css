@@ -3737,19 +3737,16 @@ footer, .project-footer-island {
     flex-direction: column;
 }
 
-@media (max-width: 992px) {
-    .ds-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    .ds-column {
-        display: contents !important;
-    }
-}
-
 @media (max-width: 768px) {
     .ds-grid {
-        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+    }
+    .ds-column {
+        flex: none !important;
+        width: 100% !important;
+    }
+    .ds-column .ds-card:last-child {
+        flex-grow: 0 !important;
     }
 }
 
@@ -4234,19 +4231,16 @@ footer, .project-footer-island {
     gap: 24px !important;
 }
 
-@media (max-width: 992px) {
-    .ds-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    .ds-column {
-        display: contents !important;
-    }
-}
-
 @media (max-width: 768px) {
     .ds-grid {
-        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+    }
+    .ds-column {
+        flex: none !important;
+        width: 100% !important;
+    }
+    .ds-column .ds-card:last-child {
+        flex-grow: 0 !important;
     }
 }
 
@@ -4629,6 +4623,48 @@ footer, .project-footer-island {
         height: auto !important;
         max-height: 460px !important;
         aspect-ratio: 1 / 1 !important;
+    }
+}
+
+/* ==========================================================================
+   GLOBAL STORY CHAPTER & COMPONENT RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .story-chapter:not(.chapter-hero),
+    .chapter-narrative {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding: var(--space-xl) 0 !important;
+    }
+
+    .concept-layout-split {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+}
+
+.concept-layout-split {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 48px;
+    width: 100%;
+    margin-bottom: var(--space-md);
+}
+
+.restease-inventory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+@media (max-width: 550px) {
+    .restease-inventory-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
     }
 }
 

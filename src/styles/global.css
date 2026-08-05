@@ -1878,6 +1878,10 @@ header.floating-header .container {
     .cta-action {
         justify-content: center;
     }
+    .custom-entrance-h1 {
+        font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+        word-break: break-word !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1891,16 +1895,19 @@ header.floating-header .container {
         text-align: center !important;
     }
     .custom-entrance-h1 {
-        font-size: clamp(1.75rem, 8vw, 2.4rem) !important;
+        font-size: clamp(1.35rem, 6.5vw, 1.85rem) !important;
         word-break: break-word !important;
-    }
-    .nowrap-desktop {
-        white-space: normal !important;
     }
 }
 
 .nowrap-desktop {
     white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .nowrap-desktop {
+        white-space: normal !important;
+    }
 }
 
 /* Responsive Container Outer Margins (Responsive_Grid_System_Guide.md) */

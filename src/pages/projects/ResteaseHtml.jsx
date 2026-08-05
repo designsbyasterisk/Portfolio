@@ -709,7 +709,7 @@ export default function ResteaseHtml() {
                 <div style={{ backgroundColor: '#ffffff', border: '1px solid var(--brand-border)', borderRadius: '20px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', flex: 1, boxSizing: 'border-box', minHeight: 0 }}>
                   <span style={{ color: 'var(--brand-accent)', fontSize: '0.68rem', fontWeight: 700, fontFamily: 'var(--font-mono)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>CONNECTED STRETCHER INVENTORY</span>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '10px', flexGrow: 1 }}>
+                  <div className="restease-inventory-grid">
                     
                     {/* Tile 1: NFC Registration */}
                     <div className={`bento-tile tile-stretchers ${nfcPaired ? 'paired' : ''}`} onClick={() => setNfcPaired(!nfcPaired)} style={{ padding: '12px', borderRadius: '16px', background: 'var(--brand-card-bg)', border: '1.5px solid var(--brand-border)', cursor: 'pointer', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'stretch', gap: '10px' }}>
