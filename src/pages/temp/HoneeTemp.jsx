@@ -95,7 +95,7 @@ export default function HoneeTemp() {
           <div className="chapter-hero-bg" style={{ background: 'linear-gradient(135deg, rgba(217, 159, 13, 0.08) 0%, rgba(217, 159, 13, 0.03) 100%)' }}></div>
           <div className="container hero-content">
             <div className="hero-text-block">
-              <span className="label-pill brand-accent-badge" style={{ color: '#d99f0d' }}>PROJECT 04 //</span>
+              <span className="label-pill brand-accent-badge" style={{ color: '#d99f0d' }}>CASE STUDY 04 //</span>
               <h1 className="gsap-split-header brand-hero-title" style={{ color: 'var(--brand-text)' }}>HONÉE</h1>
               <p className="brand-hero-subtitle" style={{ maxWidth: '800px', color: 'var(--brand-text-sub)' }}>A honey-inspired brand and e-commerce experience.</p>
             </div>
