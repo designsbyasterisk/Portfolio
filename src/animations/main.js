@@ -194,6 +194,15 @@ export function initHomeAnimations(gsap, ScrollTrigger) {
                             onEnter: () => updateProjectTrackerText(projectNum, projectDesc),
                             onEnterBack: () => updateProjectTrackerText(projectNum, projectDesc)
                         });
+                    } else if (panel === panels[0]) {
+                        ScrollTrigger.create({
+                            trigger: panel,
+                            containerAnimation: scrollTween,
+                            start: "left 75%",
+                            end: "right 25%",
+                            onEnter: () => updateProjectTrackerText("00", "FEATURED PROJECTS"),
+                            onEnterBack: () => updateProjectTrackerText("00", "FEATURED PROJECTS")
+                        });
                     }
                 });
 

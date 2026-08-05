@@ -86,12 +86,12 @@ export default function HomeTemp() {
           <div className="horizontal-scroll-container">
             <div className="horizontal-progress-tracker">
               <div className="project-indicator-text">
-                PROJECT <span id="current-project-num">01</span> / 04
+                PROJECT <span id="current-project-num">00</span> / 04
               </div>
               <div className="project-indicator-bar-wrapper">
-                <div id="project-progress-bar" style={{ width: '25%' }}></div>
+                <div id="project-progress-bar" style={{ width: '0%' }}></div>
               </div>
-              <div id="current-project-desc">EMBERQUIT: Behavioral Nicotine Cessation Mobile App</div>
+              <div id="current-project-desc">FEATURED PROJECTS</div>
             </div>
 
             <div className="horizontal-scroll-wrapper">

@@ -17,8 +17,8 @@ export default function Home() {
   const [greetingIndex, setGreetingIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [currentProjectNum, setCurrentProjectNum] = useState("01");
-  const [currentProjectDesc, setCurrentProjectDesc] = useState(projectsData[0].title + ": " + projectsData[0].subtitle);
+  const [currentProjectNum, setCurrentProjectNum] = useState("00");
+  const [currentProjectDesc, setCurrentProjectDesc] = useState("FEATURED PROJECTS");
 
   const scrollContainerRef = useRef(null);
   const scrollWrapperRef = useRef(null);
