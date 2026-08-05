@@ -4687,4 +4687,10 @@ footer, .project-footer-island {
     border: none !important;
 }
 
+@media (max-width: 768px) {
+    .flow-arrow {
+        display: none !important;
+    }
+}
+
 
