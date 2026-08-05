@@ -1216,17 +1216,10 @@ a {
         padding: 1px 12px !important;
     }
     .horizontal-progress-tracker {
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 8px !important;
-        padding: var(--space-sm) var(--space-md) !important;
-        align-items: center !important;
-        width: 100% !important;
-        background-color: var(--text-main) !important;
+        display: none !important;
+    }
+    .featured-scroll-arrow {
+        transform: rotate(90deg) !important;
     }
     .project-indicator-bar-wrapper {
         margin: 0 !important;

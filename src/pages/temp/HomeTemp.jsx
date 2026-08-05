@@ -103,7 +103,7 @@ export default function HomeTemp() {
                 <h2 className="font-display" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.2rem)', marginBottom: '20px', color: '#FFFFFF', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '-0.01em', lineHeight: 1.1 }}>
                   FEATURED PROJECTS
                 </h2>
-                <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(255, 255, 255, 0.25)', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#FFFFFF', marginTop: '8px' }}>
+                <div className="featured-scroll-arrow" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(255, 255, 255, 0.25)', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#FFFFFF', marginTop: '8px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
