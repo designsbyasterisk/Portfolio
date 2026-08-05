@@ -989,8 +989,9 @@ a {
         padding: var(--space-md) 0 !important;
     }
     .horizontal-project-card {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: calc(100% - 32px) !important;
+        max-width: calc(100% - 32px) !important;
+        margin: 0 auto !important;
         padding: var(--space-md) !important;
     }
     .project-card-image-wrap {
@@ -1167,7 +1168,9 @@ a {
     }
     .horizontal-project-card {
         grid-template-columns: 1fr;
-        width: 90%;
+        width: calc(100% - 32px) !important;
+        max-width: calc(100% - 32px) !important;
+        margin: 0 auto !important;
         padding: var(--space-md) !important;
     }
     .phone-mockup {
@@ -1902,6 +1905,12 @@ header.floating-header .container {
     .custom-entrance-h1 {
         font-size: clamp(1.35rem, 6.5vw, 1.85rem) !important;
         word-break: break-word !important;
+    }
+    .horizontal-project-card {
+        width: calc(100% - 24px) !important;
+        max-width: calc(100% - 24px) !important;
+        margin: 0 auto !important;
+        padding: 16px !important;
     }
 }
 
