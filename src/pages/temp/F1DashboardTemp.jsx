@@ -486,13 +486,17 @@ export default function F1DashboardTemp() {
                 <span className="mono brand-accent-color" style={{ display: 'block', marginBottom: '8px' }}>05 / Interactive Prototype</span>
                 <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', margin: '5px 0 8px 0' }}>Telemetry Rig</h2>
               </div>
-              <a href="/Projects/F1_Dashboard.html" onClick={handleF1Fullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary" style={{ backgroundColor: 'var(--brand-accent)', color: 'white', border: 'none', borderRadius: '50px' }}>Open Fullscreen ↗</a>
+              <a href="/Projects/F1_Dashboard.html" onClick={handleF1Fullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary desktop-only-btn" style={{ backgroundColor: 'var(--brand-accent)', color: 'white', border: 'none', borderRadius: '50px' }}>Open Fullscreen ↗</a>
             </div>
             
             <div className="ipad-mockup-container" style={{ backgroundImage: "url('/Projects/F1 Dashboard/ipad screen for f1.png')" }}>
               <div className="ipad-viewport">
                 <iframe src="/Projects/F1_Dashboard.html" title="F1 Telemetry Prototype"></iframe>
               </div>
+            </div>
+
+            <div className="portrait-only-btn-wrapper">
+              <a href="/Projects/F1_Dashboard.html" onClick={handleF1Fullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary" style={{ backgroundColor: 'var(--brand-accent)', color: 'white', border: 'none', borderRadius: '50px' }}>Open Fullscreen ↗</a>
             </div>
           </div>
         </section>

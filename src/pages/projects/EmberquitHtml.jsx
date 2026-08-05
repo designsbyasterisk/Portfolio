@@ -841,7 +841,7 @@ export default function EmberquitHtml() {
               <span className="mono brand-accent-color">05 / THE INTERACTIVE PROTOTYPE</span>
               <h2>Experience the Prototype</h2>
               <p>Play with the live, working mobile simulator. Track your smoke-free days, click the menu or action buttons, and test the logging mechanics in real-time.</p>
-              <div className="cta-row" style={{ marginTop: 'var(--space-md)' }}>
+              <div className="cta-row desktop-only-btn" style={{ marginTop: 'var(--space-md)' }}>
                 <a href="/Projects/emberquit.html" onClick={handleOpenFullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary">Open Fullscreen ↗</a>
               </div>
             </div>
@@ -855,6 +855,9 @@ export default function EmberquitHtml() {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="cta-row portrait-only-btn-wrapper">
+              <a href="/Projects/emberquit.html" onClick={handleOpenFullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary">Open Fullscreen ↗</a>
             </div>
           </div>
         </section>

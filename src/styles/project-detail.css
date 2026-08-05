@@ -4794,4 +4794,22 @@ footer, .project-footer-island {
     }
 }
 
+/* Responsive fullscreen button placement for Interactive Prototypes in Portrait viewports */
+.portrait-only-btn-wrapper {
+    display: none !important;
+}
+
+@media (orientation: portrait) {
+    .portrait-only-btn-wrapper {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: var(--space-lg) !important;
+        margin-bottom: var(--space-md) !important;
+    }
+    .desktop-only-btn {
+        display: none !important;
+    }
+}
+
 

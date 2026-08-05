@@ -320,13 +320,17 @@ export default function HoneeTemp() {
                 <span className="mono brand-accent-color">06 / Interactive Prototype</span>
                 <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', margin: '5px 0 8px 0', color: 'var(--brand-text)' }}>The Honée Storefront</h2>
               </div>
-              <a href="/Projects/Honee website/Honee.html" onClick={handleOpenFullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary" style={{ backgroundColor: 'var(--brand-accent)', color: 'white', border: 'none', borderRadius: '50px' }}>Open Fullscreen ↗</a>
+              <a href="/Projects/Honee website/Honee.html" onClick={handleOpenFullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary desktop-only-btn" style={{ backgroundColor: 'var(--brand-accent)', color: 'white', border: 'none', borderRadius: '50px' }}>Open Fullscreen ↗</a>
             </div>
             
             <div className="ipad-mockup-container" style={{ backgroundImage: "url('/Projects/Honee website/ipad screen for honee.png')" }}>
               <div className="ipad-viewport">
                 <iframe src="/Projects/Honee website/Honee.html" title="Honee Storefront Prototype"></iframe>
               </div>
+            </div>
+
+            <div className="portrait-only-btn-wrapper">
+              <a href="/Projects/Honee website/Honee.html" onClick={handleOpenFullscreen} target="_blank" rel="noreferrer" className="btn-pop btn-pop-primary" style={{ backgroundColor: 'var(--brand-accent)', color: 'white', border: 'none', borderRadius: '50px' }}>Open Fullscreen ↗</a>
             </div>
           </div>
         </section>
