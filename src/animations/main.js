@@ -145,6 +145,22 @@ export function initHomeAnimations(gsap, ScrollTrigger) {
                     }
                 });
 
+                // Fade in/out the progress tracker: hidden on intro slide, visible once scrolling to projects starts
+                gsap.fromTo(".horizontal-progress-tracker",
+                    { opacity: 0, pointerEvents: "none" },
+                    {
+                        opacity: 1,
+                        pointerEvents: "auto",
+                        scrollTrigger: {
+                            trigger: scrollContainer,
+                            start: "top top",
+                            end: () => "+=" + (window.innerWidth * 0.3),
+                            scrub: true,
+                            invalidateOnRefresh: true
+                        }
+                    }
+                );
+
                 // Horizontal project card entrance motion
                 const panels = gsap.utils.toArray('.horizontal-scroll-panel');
                 panels.forEach((panel) => {
