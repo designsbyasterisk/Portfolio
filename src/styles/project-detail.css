@@ -4691,6 +4691,89 @@ footer, .project-footer-island {
     .flow-arrow {
         display: none !important;
     }
+
+    /* Optimize narrative grid and content columns for mobile */
+    .narrative-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 32px !important;
+        padding: 0 var(--space-md) !important;
+        box-sizing: border-box !important;
+    }
+
+    .narrative-content-left,
+    .narrative-content-right {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Optimize narrative text blocks for mobile */
+    .narrative-block {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .narrative-block h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        word-break: break-word !important;
+    }
+
+    .narrative-block p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        word-break: break-word !important;
+    }
+
+    /* Optimize clinical cessation card (Emberquit metric card) for mobile */
+    .emberquit-metric-card,
+    .brand-metric-card {
+        padding: 24px 20px !important; /* Reduce padding from 36px 32px to fit mobile screen */
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 20px !important;
+    }
+
+    .emberquit-metric-card h4 {
+        font-size: 1rem !important;
+    }
+
+    .emberquit-metric-card p {
+        font-size: 0.78rem !important;
+    }
+
+    /* Optimize layered cards inside metric card for mobile */
+    .layered-stats-container {
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .layered-card {
+        padding: 16px 16px !important; /* Reduce padding from 20px 24px to prevent horizontal overflow */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .layered-card > div:first-child {
+        flex-direction: column !important; /* Stack stats label and percentage value vertically on narrow screens */
+        align-items: flex-start !important;
+        gap: 4px !important;
+    }
+
+    .layered-card h5 {
+        font-size: 0.85rem !important;
+        margin-top: 4px !important;
+    }
+
+    .layered-card p {
+        font-size: 0.72rem !important;
+        line-height: 1.4 !important;
+    }
 }
 
 
