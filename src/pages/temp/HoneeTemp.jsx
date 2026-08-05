@@ -339,12 +339,15 @@ export default function HoneeTemp() {
 
       {/* Full-Width Project Footer (Matching Resume Page) */}
       <footer className="no-print project-site-footer">
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
-          <span className="mono" style={{ fontSize: '0.75rem', color: '#0a1128', letterSpacing: '0.05em' }}>© 2026 SHREYA KULKARNI. ALL RIGHTS RESERVED.</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <Link to="/project-details/f1_dashboard" className="mono" style={{ fontSize: '0.75rem', color: '#0a1128', textDecoration: 'none', fontWeight: '600' }}>← F1 DASHBOARD</Link>
-            <span className="mono" style={{ fontSize: '0.75rem', color: '#0a1128', opacity: 0.3 }}>|</span>
-            <Link to="/project-details/emberquit" className="mono" style={{ fontSize: '0.75rem', color: '#0a1128', textDecoration: 'none', fontWeight: '600' }}>EMBERQUIT →</Link>
+        <div className="container has-projects-nav">
+          <div className="footer-left">
+            <Link to="/project-details/f1_dashboard" className="font-display footer-link-prev">← F1 DASHBOARD</Link>
+          </div>
+          <div className="footer-center">
+            <span className="mono footer-copyright">© 2026 SHREYA KULKARNI. ALL RIGHTS RESERVED.</span>
+          </div>
+          <div className="footer-right">
+            <Link to="/project-details/emberquit" className="font-display footer-link-next">EMBERQUIT →</Link>
           </div>
         </div>
       </footer>

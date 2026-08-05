@@ -4812,4 +4812,94 @@ footer, .project-footer-island {
     }
 }
 
+/* Restructured Project Footer Layout Styles */
+.project-site-footer .container.has-projects-nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.project-site-footer .container.has-projects-nav .footer-left {
+    flex: 1 !important;
+    text-align: left !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+}
+
+.project-site-footer .container.has-projects-nav .footer-center {
+    flex: 0 0 auto !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.project-site-footer .container.has-projects-nav .footer-right {
+    flex: 1 !important;
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+.project-site-footer .footer-link-prev,
+.project-site-footer .footer-link-next {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: #0a1128 !important;
+    text-decoration: none !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transform: translateY(1.5px) !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.project-site-footer .footer-link-prev:hover,
+.project-site-footer .footer-link-next:hover {
+    opacity: 0.7 !important;
+}
+
+.project-site-footer .footer-copyright {
+    font-size: 0.75rem !important;
+    color: #0a1128 !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Mobile & Tablet Portrait Footer Stack override */
+@media (max-width: 768px) {
+    .project-site-footer .container.has-projects-nav {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 16px !important;
+        align-items: center !important;
+    }
+    
+    .project-site-footer .container.has-projects-nav .footer-left {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        justify-content: flex-start !important;
+    }
+    
+    .project-site-footer .container.has-projects-nav .footer-right {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-content: flex-end !important;
+    }
+    
+    .project-site-footer .container.has-projects-nav .footer-center {
+        grid-column: 1 / span 2 !important;
+        grid-row: 2 !important;
+        justify-content: center !important;
+        margin-top: 8px !important;
+    }
+}
+
+
 
