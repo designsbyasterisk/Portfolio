@@ -375,6 +375,10 @@ header.floating-header .container {
         grid-column: auto !important;
         grid-row: auto !important;
     }
+    .profile-photo-container {
+        height: 400px !important;
+        min-height: 400px !important;
+    }
     .skills-content-wrapper {
         display: flex;
         flex-direction: column;
