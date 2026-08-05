@@ -65,6 +65,9 @@ body {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 body.theme-brand {
@@ -2942,10 +2945,10 @@ header.floating-header {
     .iphone13-mockup-wrapper.zoomed-mockup .phone-viewport iframe,
     .iphone13-mockup-wrapper.zoomed-mockup.restease-zoomed .phone-viewport iframe,
     .iphone13-mockup-wrapper .phone-viewport iframe.zoomed-iframe {
-        width: 340.8px !important;
-        height: 750.24px !important;
-        transform: scale(0.584) !important;
-        transform-origin: top left !important;
+        width: 340.8px;
+        height: 750.24px;
+        transform: scale(0.584);
+        transform-origin: top left;
         max-width: none !important;
     }
 }
@@ -3135,10 +3138,10 @@ header.floating-header {
   
   .iphone13-mockup-wrapper.zoomed-mockup.restease-zoomed .phone-viewport iframe,
   .iphone13-mockup-wrapper .phone-viewport iframe.zoomed-iframe {
-    width: 340.8px !important;
-    height: 750.24px !important;
-    transform: scale(0.7) !important;
-    transform-origin: top left !important;
+    width: 340.8px;
+    height: 750.24px;
+    transform: scale(0.7);
+    transform-origin: top left;
   }
 }
 
@@ -3178,10 +3181,10 @@ header.floating-header {
 
   .iphone13-mockup-wrapper.zoomed-mockup.restease-zoomed .phone-viewport iframe,
   .iphone13-mockup-wrapper .phone-viewport iframe.zoomed-iframe {
-    width: 340.8px !important;
-    height: 750.24px !important;
-    transform: scale(0.5) !important;
-    transform-origin: top left !important;
+    width: 340.8px;
+    height: 750.24px;
+    transform: scale(0.5);
+    transform-origin: top left;
   }
 }
 
@@ -3193,7 +3196,7 @@ header.floating-header {
 
   .iphone13-mockup-wrapper.zoomed-mockup.restease-zoomed .phone-viewport iframe,
   .iphone13-mockup-wrapper .phone-viewport iframe.zoomed-iframe {
-    transform: scale(0.45) !important;
+    transform: scale(0.45);
   }
 }
 
@@ -4666,6 +4669,22 @@ footer, .project-footer-island {
         grid-template-columns: 1fr !important;
         grid-template-rows: auto !important;
     }
+}
+
+.wireframe-iframe-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.wireframe-iframe-wrapper iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    border: none !important;
 }
 
 

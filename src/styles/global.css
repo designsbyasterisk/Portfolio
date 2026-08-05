@@ -98,7 +98,9 @@ body.theme-tangerine {
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
     scroll-padding-top: 80px; /* Offset for fixed floating header */
 }
 
@@ -110,6 +112,9 @@ body {
     line-height: 1.6;
     transition: background-color var(--transition-slow);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 /* Blueprint Grid Background */

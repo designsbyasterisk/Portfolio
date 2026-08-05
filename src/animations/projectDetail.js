@@ -102,14 +102,14 @@ export function resizeIframes() {
             iframe.style.width = `${targetWidth}px`;
             iframe.style.height = `${targetHeight}px`;
             iframe.style.transform = `scale(${scale})`;
-            iframe.style.transformOrigin = 'top center';
+            iframe.style.transformOrigin = 'top left';
             iframe.style.border = 'none';
             container.style.height = `${targetHeight * scale}px`;
         } else {
             iframe.style.width = `${targetWidth}px`;
             iframe.style.height = `${targetHeight}px`;
             iframe.style.transform = 'none';
-            iframe.style.transformOrigin = 'top center';
+            iframe.style.transformOrigin = 'top left';
             iframe.style.border = 'none';
             container.style.height = `${targetHeight}px`;
         }
