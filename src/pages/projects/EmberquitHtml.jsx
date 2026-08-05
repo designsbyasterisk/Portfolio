@@ -157,7 +157,7 @@ export default function EmberquitHtml() {
             <div className="project-meta-bar">
               <div className="meta-item">
                 <span className="meta-label">Category</span>
-                <span className="meta-val">Mobile UI/UX</span>
+                <span className="meta-val">Habit Tracking, Behavioral Design</span>
               </div>
               <div className="meta-item">
                 <span className="meta-label">Duration</span>

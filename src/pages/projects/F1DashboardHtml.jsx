@@ -87,7 +87,7 @@ export default function F1DashboardHtml() {
             <div className="project-meta-bar">
               <div className="meta-item">
                 <span className="meta-label">Category</span>
-                <span className="meta-val">Interactive Dashboard</span>
+                <span className="meta-val">Dashboards, Interaction Design</span>
               </div>
               <div className="meta-item">
                 <span className="meta-label">Duration</span>

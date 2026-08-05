@@ -64,7 +64,7 @@ export default function HoneeHtml() {
             <div className="project-meta-bar" style={{ borderColor: 'var(--brand-border)' }}>
               <div className="meta-item">
                 <span className="meta-label" style={{ color: 'var(--brand-text-sub)' }}>Category</span>
-                <span className="meta-val" style={{ color: 'var(--brand-text)' }}>Brand Identity • UI/UX Design</span>
+                <span className="meta-val" style={{ color: 'var(--brand-text)' }}>Branding, E-Commerce UX</span>
               </div>
               <div className="meta-item">
                 <span className="meta-label" style={{ color: 'var(--brand-text-sub)' }}>Duration</span>

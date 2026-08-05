@@ -196,7 +196,7 @@ export default function ResteaseHtml() {
             <div className="project-meta-bar">
               <div className="meta-item">
                 <span className="meta-label">Category</span>
-                <span className="meta-val">Disaster UI/UX &amp; Systems</span>
+                <span className="meta-val">UX Research, Systems Design</span>
               </div>
               <div className="meta-item">
                 <span className="meta-label">Duration</span>

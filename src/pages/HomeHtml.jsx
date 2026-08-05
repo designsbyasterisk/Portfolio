@@ -151,7 +151,7 @@ export default function HomeHtml() {
                     </p>
                     <div className="project-card-footer-row">
                       <div className="tag-group-mockup">
-                        <span className="tag-pill-custom">DATA VISUALISATION</span>
+                        <span className="tag-pill-custom">DASHBOARDS</span>
                         <span className="tag-pill-custom">INTERACTION DESIGN</span>
                       </div>
                       <Link to="/project-details/f1_dashboard" className="case-study-link-custom">
