@@ -198,25 +198,23 @@ export default function F1DashboardHtml() {
 
             {/* Scenario Case Study Box */}
             <div className="bento-card" style={{ margin: '0', padding: 'var(--space-md) var(--space-lg)', borderColor: 'var(--brand-border)', backgroundColor: 'var(--brand-card-bg)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--brand-border)', paddingBottom: '12px', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span className="mono" style={{ fontSize: '0.75rem', background: 'rgba(9, 9, 11, 0.05)', color: 'var(--brand-text)', padding: '3px 8px', borderRadius: '4px', fontWeight: '700' }}>MONACO GP CASE SCENARIO</span>
-                  <span className="clash-h3" style={{ color: 'var(--brand-text)' }}>Anatomy of a Lap 18 Defense</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', borderBottom: '1px solid var(--brand-border)', paddingBottom: '12px', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+                  <span className="mono" style={{ fontSize: '0.75rem', background: 'rgba(9, 9, 11, 0.05)', color: 'var(--brand-text)', padding: '3px 8px', borderRadius: '4px', fontWeight: '700', display: 'inline-block' }}>MONACO GP CASE SCENARIO</span>
+                  <span className="clash-h3" style={{ color: 'var(--brand-text)', marginTop: '4px' }}>Anatomy of Lap 18 Defense</span>
                 </div>
-                <span className="mono" style={{ fontSize: '0.75rem', color: 'var(--brand-accent)', fontWeight: '700' }}>LECLERC vs. PIASTRI</span>
+                <span className="mono" style={{ fontSize: '0.75rem', color: 'var(--brand-accent)', fontWeight: '700', marginTop: '4px' }}>LECLERC vs. PIASTRI</span>
               </div>
               
-              <div className="scenario-grid">
-                <div className="scenario-divider"></div>
-                
-                <div className="scenario-col-left" style={{ paddingRight: 'var(--space-md)' }}>
+              <div className="scenario-grid" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
+                <div className="scenario-col-left" style={{ paddingRight: '0' }}>
                   <span className="mono" style={{ fontSize: '0.65rem', color: 'var(--brand-text-sub)', display: 'block', marginBottom: '6px', letterSpacing: '0.05em', fontWeight: '700', textTransform: 'uppercase' }}>On the Television Feed</span>
                   <p style={{ fontSize: '0.85rem', lineHeight: '1.5', color: 'var(--brand-text-sub)', margin: '0' }}>
                     The TV broadcast displays the live visual feed, timing graphics, and incident replays of Leclerc defending against Piastri into the harbour chicane, accompanied by race commentary analyzing the visual battle and tyre performance.
                   </p>
                 </div>
                 
-                <div className="scenario-col-right" style={{ paddingLeft: 'var(--space-md)' }}>
+                <div className="scenario-col-right" style={{ paddingLeft: '0' }}>
                   <span className="mono" style={{ fontSize: '0.65rem', color: 'var(--brand-accent)', display: 'block', marginBottom: '6px', letterSpacing: '0.05em', fontWeight: '700', textTransform: 'uppercase' }}>What the Telemetry Reveals</span>
                   <p style={{ fontSize: '0.85rem', lineHeight: '1.5', color: 'var(--brand-text-sub)', margin: '0' }}>
                     The dashboard reveals the exact telemetry parameters measured on-track: speed (km/h), throttle percentage, brake pressure, active gear selection, and lap time gap deltas between the two drivers.
