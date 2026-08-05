@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 
-const GREETINGS = ["HI THERE!", "WELCOME!", "EXPLORE!"];
+const GREETINGS = ["HI THERE!", "WELCOME!"];
 
 export default function HomeHtml() {
   const [greetingIndex, setGreetingIndex] = useState(0);

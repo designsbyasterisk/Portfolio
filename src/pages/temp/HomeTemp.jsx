@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const GREETINGS = ["HI THERE!", "WELCOME!", "EXPLORE!"];
+const GREETINGS = ["HI THERE!", "WELCOME!"];
 
 export default function HomeTemp() {
   const [greetingIndex, setGreetingIndex] = useState(0);

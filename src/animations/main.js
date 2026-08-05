@@ -425,7 +425,7 @@ export function initHomeAnimations(gsap, ScrollTrigger) {
     /* ----------------------------------------------------------------------
        8. Playful Typewriter Greeting Rotator
        ---------------------------------------------------------------------- */
-    const greetings = ["HI THERE!", "WELCOME!", "EXPLORE!"];
+    const greetings = ["HI THERE!", "WELCOME!"];
     const greetingEl = document.getElementById('hero-greeting');
     let greetingIndex = 0;
 

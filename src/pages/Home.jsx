@@ -9,7 +9,7 @@ import { useMagnetic } from '../hooks/useMagnetic';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GREETINGS = ["HI THERE!", "WELCOME!", "EXPLORE!"];
+const GREETINGS = ["HI THERE!", "WELCOME!"];
 
 export default function Home() {
   useMagnetic('.magnetic');
