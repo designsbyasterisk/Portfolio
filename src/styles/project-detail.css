@@ -3143,6 +3143,21 @@ header.floating-header {
     transform: scale(0.7);
     transform-origin: top left;
   }
+
+  .ds-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+
+  .ds-column {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .ds-column:last-child {
+    grid-column: span 2 !important;
+  }
 }
 
 /* Mobile Devices (<= 767px) */
