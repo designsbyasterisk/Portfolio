@@ -43,7 +43,7 @@ export default function F1DashboardTemp() {
 
   const handleF1Fullscreen = (e) => {
     e.preventDefault();
-    const prototypeUrl = '/Projects/F1_Dashboard.html';
+    const prototypeUrl = '/Projects/F1_Dashboard.html?v=rotate';
     window.open(prototypeUrl, '_blank', 'noreferrer');
   };
 
