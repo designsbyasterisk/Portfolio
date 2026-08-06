@@ -10,6 +10,7 @@ import ResteaseHtml from './pages/projects/ResteaseHtml';
 import ResteaseTemp from './pages/temp/ResteaseTemp';
 import ResponsivePreview from './pages/ResponsivePreview';
 import NotFound from './pages/NotFound';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import useOriginalAnimations from './hooks/useOriginalAnimations';
 
 import ScrollToTop from './components/ScrollToTop';
@@ -24,6 +25,7 @@ function App() {
     <>
       <ScrollToTop />
       <CustomCursor />
+      <ScrollToTopButton />
       <Routes>
         <Route path="/" element={<HomeHtml />} />
         <Route path="/responsive-preview" element={<ResponsivePreview />} />
