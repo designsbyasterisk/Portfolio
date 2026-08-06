@@ -41,26 +41,9 @@ export default function F1DashboardTemp() {
     }
   };
 
-  const handleF1Fullscreen = async (e) => {
+  const handleF1Fullscreen = (e) => {
     e.preventDefault();
     const prototypeUrl = '/Projects/F1_Dashboard.html';
-    
-    // Check if user is on portrait / tablet / mobile viewport
-    const isPortrait = window.matchMedia('(orientation: portrait)').matches || window.innerWidth < 1024;
-    
-    if (isPortrait) {
-      try {
-        if (document.documentElement.requestFullscreen) {
-          await document.documentElement.requestFullscreen();
-        }
-        if (screen.orientation && screen.orientation.lock) {
-          await screen.orientation.lock('landscape');
-        }
-      } catch (err) {
-        console.log('Landscape orientation lock on click:', err);
-      }
-    }
-    
     window.open(prototypeUrl, '_blank', 'noreferrer');
   };
 
