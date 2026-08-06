@@ -9,6 +9,7 @@ import HoneeHtml from './pages/projects/HoneeHtml';
 import ResteaseHtml from './pages/projects/ResteaseHtml';
 import ResteaseTemp from './pages/temp/ResteaseTemp';
 import ResponsivePreview from './pages/ResponsivePreview';
+import NotFound from './pages/NotFound';
 import useOriginalAnimations from './hooks/useOriginalAnimations';
 
 import ScrollToTop from './components/ScrollToTop';
@@ -43,6 +44,9 @@ function App() {
 
         <Route path="/project-details/restease.html" element={<ResteaseHtml />} />
         <Route path="/project-details/restease" element={<ResteaseHtml />} />
+
+        {/* Catch-all Fallback Route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
