@@ -42,14 +42,15 @@ export function MissionMap({ selectedUnitId, onUnitSelect, showPaths, showGeofen
   const mapCenter: [number, number] = [11.5542, 76.1511];
 
   // Carto Basemaps API key handling
-  // Support key from window, URL params (?carto_key= / ?api_key= / ?key=), or build-time env
-  const cartoApiKey = typeof window !== "undefined"
+  // Support key from window, URL params (?carto_key= / ?api_key= / ?key=), build-time env, or registered default key
+  const DEFAULT_CARTO_KEY = "cb1_48jg_1_cc1df522e1b442af176b984f";
+  const cartoApiKey = (typeof window !== "undefined"
     ? ((window as any).CARTO_API_KEY ||
        new URLSearchParams(window.location.search).get("carto_key") ||
        new URLSearchParams(window.location.search).get("api_key") ||
        new URLSearchParams(window.location.search).get("key") ||
        (import.meta as any).env?.VITE_CARTO_API_KEY)
-    : undefined;
+    : undefined) || DEFAULT_CARTO_KEY;
 
   // If a valid Carto key is available, use Carto basemaps; otherwise use high-performance Esri Dark/Light Canvas (watermark-free)
   const tileUrl = cartoApiKey

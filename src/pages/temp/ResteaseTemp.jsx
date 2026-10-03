@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ResteaseTemp() {
-  const cartoApiKey = import.meta.env?.VITE_CARTO_API_KEY || '';
+  const cartoApiKey = import.meta.env?.VITE_CARTO_API_KEY || 'cb1_48jg_1_cc1df522e1b442af176b984f';
   const prototypeSrc = `/Projects/restease.html?embed=true&v=1.0.8${cartoApiKey ? `&carto_key=${encodeURIComponent(cartoApiKey)}` : ''}`;
   const fullscreenHref = `/Projects/restease.html${cartoApiKey ? `?carto_key=${encodeURIComponent(cartoApiKey)}` : ''}`;
 
