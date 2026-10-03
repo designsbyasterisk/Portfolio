@@ -4,6 +4,10 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export default function ResteaseHtml() {
+  const cartoApiKey = import.meta.env?.VITE_CARTO_API_KEY || '';
+  const prototypeSrc = `/Projects/restease.html?embed=true&v=1.0.8${cartoApiKey ? `&carto_key=${encodeURIComponent(cartoApiKey)}` : ''}`;
+  const fullscreenHref = `/Projects/restease.html${cartoApiKey ? `?carto_key=${encodeURIComponent(cartoApiKey)}` : ''}`;
+
   // Brand Theme Lifecycle Mount Hook
   useEffect(() => {
     document.body.className = 'theme-brand temp-page';
@@ -859,7 +863,7 @@ export default function ResteaseHtml() {
                 Interact with the live, working rescue telemetry dashboard. Check the GPS satellites, respond to SOS alerts, and simulate off-grid connection drops.
               </p>
               <div className="cta-row desktop-only-btn" style={{ marginTop: 'var(--space-md)' }}>
-                <a href="/Projects/restease.html" target="_blank" rel="noopener noreferrer" className="btn-pop btn-pop-primary">Open Fullscreen ↗</a>
+                <a href={fullscreenHref} target="_blank" rel="noopener noreferrer" className="btn-pop btn-pop-primary">Open Fullscreen ↗</a>
               </div>
             </div>
             <div className="mockup-reveal-viewport-container">
@@ -867,14 +871,14 @@ export default function ResteaseHtml() {
                 <div className="iphone13-mockup-wrapper zoomed-mockup restease-zoomed">
                   <img className="iphone13-frame-img" src="/project-details/img/restease_phone_mockup.png" alt="iPhone 13 Green Mockup Frame" />
                   <div className="phone-viewport">
-                    <iframe className="zoomed-iframe" src="/Projects/restease.html?embed=true&amp;v=1.0.7" title="Restease Live Prototype" width="100%" height="100%"></iframe>
+                    <iframe className="zoomed-iframe" src={prototypeSrc} title="Restease Live Prototype" width="100%" height="100%"></iframe>
                     <div className="viewport-mask"></div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="cta-row portrait-only-btn-wrapper">
-              <a href="/Projects/restease.html" target="_blank" rel="noopener noreferrer" className="btn-pop btn-pop-primary">Open Fullscreen ↗</a>
+              <a href={fullscreenHref} target="_blank" rel="noopener noreferrer" className="btn-pop btn-pop-primary">Open Fullscreen ↗</a>
             </div>
           </div>
         </section>

@@ -41,6 +41,29 @@ export function MissionMap({ selectedUnitId, onUnitSelect, showPaths, showGeofen
   // Center on Wayanad district roughly
   const mapCenter: [number, number] = [11.5542, 76.1511];
 
+  // Carto Basemaps API key handling
+  // Support key from window, URL params (?carto_key= / ?api_key= / ?key=), or build-time env
+  const cartoApiKey = typeof window !== "undefined"
+    ? ((window as any).CARTO_API_KEY ||
+       new URLSearchParams(window.location.search).get("carto_key") ||
+       new URLSearchParams(window.location.search).get("api_key") ||
+       new URLSearchParams(window.location.search).get("key") ||
+       (import.meta as any).env?.VITE_CARTO_API_KEY)
+    : undefined;
+
+  // If a valid Carto key is available, use Carto basemaps; otherwise use high-performance Esri Dark/Light Canvas (watermark-free)
+  const tileUrl = cartoApiKey
+    ? (t.isLight 
+        ? `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${cartoApiKey}`
+        : `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=${cartoApiKey}`)
+    : (t.isLight
+        ? "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+        : "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}");
+
+  const tileAttribution = cartoApiKey
+    ? '&copy; <a href="https://carto.com/">Carto</a>'
+    : '&copy; <a href="https://www.esri.com/">Esri</a>, DeLorme, NAVTEQ';
+
   return (
     <div style={{ flex: 1, backgroundColor: t.bgCard, position: "relative" }}>
       <MapContainer 
@@ -50,10 +73,8 @@ export function MissionMap({ selectedUnitId, onUnitSelect, showPaths, showGeofen
         zoomControl={false}
       >
         <TileLayer
-          url={t.isLight 
-            ? "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-            : "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"}
-          attribution='&copy; <a href="https://carto.com/">Carto</a>'
+          url={tileUrl}
+          attribution={tileAttribution}
         />
 
         {showGeofence && (
